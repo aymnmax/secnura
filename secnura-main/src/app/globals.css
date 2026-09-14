@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  /* Secnura brand palette — see brand guide */
+  --secnura-navy: #0b2d5b;
+  --secnura-cyan: #00b3ff;
+  --secnura-ice: #e6eef5;
+
+  --color-bg: #ffffff;
+  --color-bg-elevated: #e6eef5;
+  --color-bg-panel: #ffffff;
+  --color-border: #d7e2ed;
+  --color-border-strong: #b9c9da;
+  --color-text: #0b2d5b;
+  --color-text-muted: #3f5a7d;
+  --color-text-faint: #7488a3;
+  --color-accent: #00b3ff;
+  --color-accent-soft: #d6f1ff;
+  --color-line: #b9c9da;
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-bg-elevated: var(--color-bg-elevated);
+  --color-bg-panel: var(--color-bg-panel);
+  --color-border: var(--color-border);
+  --color-border-strong: var(--color-border-strong);
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-faint: var(--color-text-faint);
+  --color-accent: var(--color-accent);
+  --color-accent-soft: var(--color-accent-soft);
+  --color-line: var(--color-line);
+  --color-navy: var(--secnura-navy);
+  --color-cyan: var(--secnura-cyan);
+  --color-ice: var(--secnura-ice);
+
+  --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-montserrat), ui-monospace, monospace;
+
+  --container-content: 72rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-bg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      transition-delay: 0s !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
